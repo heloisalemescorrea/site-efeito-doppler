@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta
+        name="description"
+        content="Calculadora de frequência percebida pelo efeito Doppler"
+    >
+    <title>Calculadora do Efeito Doppler</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <main class="container">
+        <section class="calculadora">
+            <h1>Calculadora do Efeito Doppler</h1>
+
+            <p class="orientacao">
+                Use valores positivos quando observador e fonte se aproximam
+                e negativos quando se afastam.
+            </p>
+
+            <form id="doppler-form">
+                <div class="campo">
+                    <label for="velocidade-observador">
+                        Velocidade do observador (m/s)
+                    </label>
+                    <input
+                        type="number"
+                        id="velocidade-observador"
+                        name="velocidade-observador"
+                        step="any"
+                        value="0"
+                        required
+                    >
+                </div>
+
+                <div class="campo">
+                    <label for="velocidade-fonte">
+                        Velocidade da fonte (m/s)
+                    </label>
+                    <input
+                        type="number"
+                        id="velocidade-fonte"
+                        name="velocidade-fonte"
+                        step="any"
+                        value="0"
+                        required
+                    >
+                </div>
+
+                <div class="campo">
+                    <label for="velocidade-som">
+                        Velocidade do som (m/s)
+                    </label>
+                    <input
+                        type="number"
+                        id="velocidade-som"
+                        name="velocidade-som"
+                        step="any"
+                        min="0.01"
+                        value="343"
+                        required
+                    >
+                </div>
+
+                <div class="campo">
+                    <label for="frequencia-fonte">
+                        Frequência da fonte (Hz)
+                    </label>
+                    <input
+                        type="number"
+                        id="frequencia-fonte"
+                        name="frequencia-fonte"
+                        step="any"
+                        min="0.01"
+                        placeholder="Ex.: 440"
+                        required
+                    >
+                </div>
+
+                <button type="submit">Calcular frequência</button>
+            </form>
+
+            <div
+                id="resultado"
+                class="resultado"
+                role="status"
+                aria-live="polite"
+            >
+                Preencha os dados para realizar o cálculo.
+            </div>
+
+            <p class="formula">
+                Fórmula:
+                <strong>f<sub>o</sub> = f<sub>f</sub> × (v + v<sub>o</sub>)
+                / (v - v<sub>f</sub>)</strong>
+            </p>
+        </section>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
